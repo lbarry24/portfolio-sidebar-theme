@@ -1,5 +1,5 @@
 /**
- * Copyright 2025 Alyssa F
+ * Copyright 2025 lbarry24
  * @license Apache-2.0, see LICENSE for full text.
  */
 import { LitElement, html, css } from "lit";
