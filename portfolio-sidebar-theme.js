@@ -2,83 +2,97 @@
  * Copyright 2025 lbarry24
  * @license Apache-2.0, see LICENSE for full text.
  */
-import { LitElement, html, css } from "lit";
-import { DDDSuper } from "@haxtheweb/d-d-d/d-d-d.js";
-import { I18NMixin } from "@haxtheweb/i18n-manager/lib/I18NMixin.js";
+import { css } from 'lit';
 
-/**
- * `portfolio-sidebar-theme`
- * 
- * @demo index.html
- * @element portfolio-sidebar-theme
- */
-export class PortfolioSidebarTheme extends DDDSuper(I18NMixin(LitElement)) {
-
-  static get tag() {
-    return "portfolio-sidebar-theme";
+export const portfolioSidebarStyles = css`
+  :host {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
   }
-
-  constructor() {
-    super();
-    this.title = "";
-    this.t = this.t || {};
-    this.t = {
-      ...this.t,
-      title: "Title",
-    };
-    this.registerLocalization({
-      context: this,
-      localesPath:
-        new URL("./locales/portfolio-sidebar-theme.ar.json", import.meta.url).href +
-        "/../",
-      locales: ["ar", "es", "hi", "zh"],
-    });
+  nav {
+    width: 200px;
+    background: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 1em;
+    gap: 1.5em;
   }
-
-  // Lit reactive properties
-  static get properties() {
-    return {
-      ...super.properties,
-      title: { type: String },
-    };
+  nav button {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    width: 100%;
+    padding: 0.8em;
+    font-size: 1em;
   }
-
-  // Lit scoped styles
-  static get styles() {
-    return [super.styles,
-    css`
-      :host {
-        display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
-        font-family: var(--ddd-font-navigation);
-      }
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
-      h3 span {
-        font-size: var(--portfolio-sidebar-theme-label-font-size, var(--ddd-font-size-s));
-      }
-    `];
+  nav button:hover {
+    background: #444;
   }
-
-  // Lit render the HTML
-  render() {
-    return html`
-<div class="wrapper">
-  <h3><span>${this.t.title}:</span> ${this.title}</h3>
-  <slot></slot>
-</div>`;
+  main {
+    flex: 1;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
   }
-
-  /**
-   * haxProperties integration via file reference
-   */
-  static get haxProperties() {
-    return new URL(`./lib/${this.tag}.haxProperties.json`, import.meta.url)
-      .href;
+  section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    text-align: center;
   }
-}
-
-globalThis.customElements.define(PortfolioSidebarTheme.tag, PortfolioSidebarTheme);
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1em;
+  }
+  .scroll-top-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  .download-resume-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: #222;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+    border: 1px solid white;
+    transition: background 0.3s;
+  }
+  .download-resume-btn:hover {
+    background: #444;
+  }
+  iframe {
+    border: none;
+    max-width: 90%;
+    height: 600px;
+  }
+  .about-text {
+    max-width: 700px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    padding: 0 1rem;
+  }
+`;
