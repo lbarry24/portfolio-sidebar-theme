@@ -27,38 +27,37 @@ export class PortfolioSidebar extends DDDSuper(I18NMixin(LitElement)) {
 
   static get styles() {
     return [super.styles,
-    css`
-      :host {
-        display: block;
-        font-family: var(--ddd-font-navigation);
-      }
+      css`
+        :host {
+          display: block;
+          font-family: var(--ddd-font-navigation);
+        }
+  
+        .wrapper {
+  width: 280px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  background-color: black; /* <-- solid black background only */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 4px solid white;
+  padding: 2rem 1rem;
+}
 
-      .wrapper {
-        width: 300px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-        overflow-x: hidden;
-        background: linear-gradient(
-          rgba(0, 0, 0, 0.7),
-          rgba(0, 0, 0, 0.7)
-        ),
-        url(https://www.crowe.com/-/media/crowe/llp/sc10-media/insights/articles/2023/content-2000x1125/contentmktmt2300002bfy23-markets-technology-awareness--whats-next-for-tech--thought-leadershipas3639.jpg?rev=025a044aa9394515a261e9c6242045cb);
-        background-size: cover;
-        background-position: center;
-        background-color: black;
-        display: flex;
-        text-align: center;
-        border-right: 10px solid white;
-      }
 
-      .links {
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
-    `];
+
+  
+        .links {
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+      `
+    ];
   }
 
   render() {

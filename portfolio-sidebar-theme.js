@@ -59,7 +59,7 @@ export const portfolioSidebarStyles = css`
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    background: #222;
+    background: #b60909;
     color: white;
     border: none;
     border-radius: 50%;
@@ -72,7 +72,7 @@ export const portfolioSidebarStyles = css`
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background: #222;
+    background: #a60505;
     color: white;
     text-decoration: none;
     font-size: 1rem;

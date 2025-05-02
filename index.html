@@ -2,200 +2,264 @@
 <html lang="en">
 
 <head>
-  <base href="/">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="Description" content="Mamadou Barry Portfolio">
+ <base href="/">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+ <meta name="Description" content="Mamadou Barry Portfolio">
 
-  <style>
-    :root, html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow-x: hidden;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
+ <style>
+  :root, html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+  }
 
-    .page-layout {
-      display: flex;
-      min-height: 100vh;
-    }
+  .page-layout {
+    display: flex;
+    min-height: 100vh;
+  }
 
-    /* Sidebar styles */
-    portfolio-sidebar {
-      width: 280px;
-      background: linear-gradient(rgb(74, 26, 163), rgb(34, 202, 202));
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      border-right: 4px solid rgb(163, 20, 20);
-    }
+  portfolio-sidebar {
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('./84C663A6-BE5E-4BF4-9BD4-00756C5559AF.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: rgb(221, 21, 21);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    position: sticky;
+    top: 0;
+    border-right: 4px solid rgb(17, 211, 228);
+  }
 
-    portfolio-sidebar {
-  width: 280px;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.7)
-  ),
-  url('https://images.unsplash.com/photo-1555617117-08e1627b4b8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=60');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  border-right: 4px solid white;
+  portfolio-sidebar button {
+    background: transparent;
+    color: rgb(231, 240, 227);
+    border: 2px solid rgb(8, 205, 223);
+    margin: 0.8rem 0;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  portfolio-sidebar button:hover {
+    background: white;
+    color: black;
+  }
+
+  main {
+    flex: 1;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+  }
+
+  section {
+    height: 100vh; 
+    width: 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #about { background-color: #f0f8ff; }
+  #projects { background-color: #e6f7ff; }
+  #skills { background-color: #f9f9f9; }
+  #experience { background-color: #fff5e6; }
+  #contact { background-color: #e6ffe6; }
+
+  .profile-pic {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 4px solid white;
+  ;
 }
 
 
+  h1, p, ul {
+    margin: 0.5rem 0;
+  }
 
-    portfolio-sidebar button:hover {
-      background: white;
-      color: black;
-    }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
 
-    /* Main Content */
-    main {
-      flex: 1;
-      overflow-y: auto;
-      scroll-snap-type: y mandatory;
-    }
+  .download-resume {
+    margin-top: 1rem;
+    background: #222;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1rem;
+    border: 1px solid white;
+    transition: background 0.3s;
+  }
 
-    section {
-      height: 100vh;
-      scroll-snap-align: start;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 2rem;
-      font-size: 1.5rem;
-    }
+  .download-resume:hover {
+    background: #444;
+  }
 
-    /* Background colors for sections */
-    #about { background-color: #f0f8ff; }
-    #projects { background-color: #e6f7ff; }
-    #skills { background-color: #f9f9f9; }
-    #experience { background-color: #fff5e6; }
-    #contact { background-color: #e6ffe6; }
+  .scroll-top-btn {
+    margin-top: auto;
+    margin-bottom: 2rem;
+    background: white;
+    color: black;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
 
-    /* Scroll to Top button */
-    .scroll-top-btn {
-      margin-top: auto;
-      margin-bottom: 2rem;
-      background: white;
-      color: black;
-      border: none;
-      font-size: 1.5rem;
-      padding: 10px 15px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
+  .scroll-top-btn:hover {
+    background: gray;
+    color: white;
+  }
+</style>
 
-    .scroll-top-btn:hover {
-      background: gray;
-      color: white;
-    }
-  </style>
 
-  <!-- Load JavaScript modules -->
-  <script type="module" src="./portfolio-page.js"></script>
-  <script type="module" src="./portfolio-sidebar-theme.js"></script>
-  <script type="module" src="./portfolio-sidebar.js"></script>
-  <script type="module" src="./portfolio-page-wrapper.js"></script>
+ <!-- Load JavaScript modules -->
+ <script type="module" src="./portfolio-page.js"></script>
+ <script type="module" src="./portfolio-sidebar-theme.js"></script>
+ <script type="module" src="./portfolio-sidebar.js"></script>
+ <script type="module" src="./portfolio-page-wrapper.js"></script>
 
-  <script>
-    function scrollToSection(id) {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
+ <script>
+   function scrollToSection(id) {
+     const el = document.getElementById(id);
+     if (el) {
+       el.scrollIntoView({ behavior: 'smooth' });
+     }
+   }
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+   function scrollToTop() {
+     window.scrollTo({ top: 0, behavior: 'smooth' });
+   }
+ </script>
 </head>
 
 <body>
-  <div class="page-layout">
+ <div class="page-layout">
 
-    <!-- Sidebar -->
-    <portfolio-sidebar>
-      <button onclick="scrollToSection('about')">About</button>
-      <button onclick="scrollToSection('projects')">Projects</button>
-      <button onclick="scrollToSection('skills')">Skills</button>
-      <button onclick="scrollToSection('experience')">Experience</button>
-      <button onclick="scrollToSection('contact')">Contact</button>
-      <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
-    </portfolio-sidebar>
+   <!-- Sidebar -->
+   <portfolio-sidebar>
+     <button onclick="scrollToSection('about')">About</button>
+     <button onclick="scrollToSection('projects')">Projects</button>
+     <button onclick="scrollToSection('skills')">Skills</button>
+     <button onclick="scrollToSection('experience')">Experience</button>
+     <button onclick="scrollToSection('contact')">Contact</button>
+     <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+   </portfolio-sidebar>
 
-    <!-- Main Content -->
-    <main>
+   <!-- Main Content -->
+   <main>
 
-      <section id="about">
-        <h1>Mamadou Lamine Barry</h1>
-        <p>Career Objective:</p>
-        <p>"Aspiring IT professional with a passion for community development, technology innovation, and problem-solving."</p>
-      </section>
+     <section id="about">
+       <img src="6692589F-C049-4A4A-AC4E-BBBDC96F4466.JPG" alt="Mamadou Lamine Barry" class="profile-pic" />
+       <h1>Mamadou Lamine Barry</h1>
+       <h2>About Me</h2>
+       <p>I'm an aspiring IT professional from Philadelphia, passionate about using technology to create positive change in communities. 
+       Growing up, I was fascinated by how computers connect people worldwide. This passion led me to pursue technical skills in Java, SQL, and project management. 
+       Today, I'm eager to build real-world solutions that support businesses, charities, and organizations that give back.</p>
+       
+     </section>
 
-      <section id="projects">
-        <h1>Projects</h1>
-        <ul>
-          <li>Barry Water Charity (Guinea)</li>
-          <li>NAB Tech Apprenticeship</li>
-          <li>Fulani Mosque Initiatives</li>
-        </ul>
-      </section>
+     <section id="projects">
+       <h1>Projects</h1>
 
-      <section id="skills">
-        <h1>Skills</h1>
-        <p><strong>Technical:</strong></p>
-        <ul>
-          <li>Java</li>
-          <li>SQL</li>
-          <li>Project Management</li>
-        </ul>
-        <p><strong>Soft Skills:</strong></p>
-        <ul>
-          <li>Fundraising</li>
-          <li>Community Engagement</li>
-          <li>Inventory Management</li>
-        </ul>
-      </section>
+       <div class="project-item">
+         <h3>Barry Water Charity (Guinea)</h3>
+         <p>Founded a community initiative to provide clean drinking water access to rural areas in Guinea, West Africa. Organized fundraising events and led a team of volunteers.</p>
+       </div>
 
-      <section id="experience">
-        <h1>Experience</h1>
-        <ul>
-          <li>Qdoba (Team Member)</li>
-          <li>PCI Pharmaceuticals (Packer)</li>
-          <li>Rack Room Shoes (Sales Associate)</li>
-        </ul>
-      </section>
+       <div class="project-item">
+         <h3>NAB Tech Apprenticeship</h3>
+         <p>Completed a competitive apprenticeship program focused on software development, IT project management, and real-world tech solutions.</p>
+       </div>
 
-      <section id="contact">
-        <h1>Contact</h1>
-        <p>Email: mbarry182004@gmail.com</p>
-        <p>Phone: (267) 367-0822</p>
-        <p>Location: Philadelphia, PA</p>
-        <!-- Optional: Embed a form here if you want -->
-      </section>
+       <div class="project-item">
+         <h3>Fulani Mosque Initiatives</h3>
+         <p>Supported mosque construction and IT integration, including project planning, resource management, and community outreach.</p>
+       </div>
+     </section>
 
-    </main>
+     <section id="skills">
+       <h1>Skills</h1>
 
-  </div>
+       <h2>Technical Skills</h2>
+       <ul>
+         <li>Programming Languages: Java, Python, SQL</li>
+         <li>Database Management: MySQL, MongoDB</li>
+         <li>Project Management: Trello, Asana, Agile/Scrum basics</li>
+         <li>Web Development: HTML, CSS, JavaScript (basic)</li>
+       </ul>
+
+       <h2>Soft Skills</h2>
+       <ul>
+         <li>Leadership and Team Management</li>
+         <li>Fundraising and Non-Profit Event Planning</li>
+         <li>Community Engagement and Public Speaking</li>
+       </ul>
+     </section>
+
+     <section id="experience">
+       <h1>Experience</h1>
+
+       <div class="experience-item">
+         <h3>Qdoba — Team Member</h3>
+         <p>Delivered excellent customer service in a fast-paced environment. Handled point-of-sale operations and trained new staff members.</p>
+       </div>
+
+       <div class="experience-item">
+         <h3>PCI Pharmaceuticals — Packer</h3>
+         <p>Worked in a regulated warehouse environment ensuring accurate and safe packaging of medical products, maintaining strict quality standards.</p>
+       </div>
+
+       <div class="experience-item">
+         <h3>Rack Room Shoes — Sales Associate</h3>
+         <p>Supported daily sales operations, improved customer satisfaction rates, and achieved sales targets through proactive customer engagement.</p>
+       </div>
+     </section>
+
+     <section id="contact">
+       <h1>Contact Me</h1>
+       <p>Thank you for visiting my portfolio! Feel free to reach out for project collaborations, job opportunities, or community initiatives.</p>
+       <p>Email: <a href="mailto:mbarry182004@gmail.com">mbarry182004@gmail.com</a></p>
+       <p>Phone: <a href="tel:+12673670822">(267) 367-0822</a></p>
+       <p>Location: Philadelphia, PA</p>
+
+       <a class="download-resume" href="./rsume.2.pdf" download>Download Resume</a>
+
+     </section>
+
+   </main>
+
+ </div>
 </body>
 
 </html>
+
