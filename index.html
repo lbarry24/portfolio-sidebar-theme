@@ -16,7 +16,7 @@
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
   }
-
+  
   .page-layout {
     display: flex;
     min-height: 100vh;
@@ -147,7 +147,7 @@
 </style>
 
 
- <!-- Load JavaScript modules -->
+ 
  <script type="module" src="./portfolio-page.js"></script>
  <script type="module" src="./portfolio-sidebar-theme.js"></script>
  <script type="module" src="./portfolio-sidebar.js"></script>
@@ -164,13 +164,13 @@
    function scrollToTop() {
      window.scrollTo({ top: 0, behavior: 'smooth' });
    }
+
  </script>
 </head>
 
 <body>
  <div class="page-layout">
 
-   <!-- Sidebar -->
    <portfolio-sidebar>
      <button onclick="scrollToSection('about')">About</button>
      <button onclick="scrollToSection('projects')">Projects</button>
@@ -178,6 +178,7 @@
      <button onclick="scrollToSection('experience')">Experience</button>
      <button onclick="scrollToSection('contact')">Contact</button>
      <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+
    </portfolio-sidebar>
 
    <!-- Main Content -->
@@ -264,7 +265,7 @@
    </main>
 
  </div>
+
 </body>
 
 </html>
-

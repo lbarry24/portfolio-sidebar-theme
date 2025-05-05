@@ -39,7 +39,7 @@ export class PortfolioSidebar extends DDDSuper(I18NMixin(LitElement)) {
   position: fixed;
   top: 0;
   overflow-x: hidden;
-  background-color: black; /* <-- solid black background only */
+  background-color: black; 
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,4 +1,6 @@
 import { LitElement, html, css } from 'lit';
+import '@haxtheweb/scroll-button/scroll-button.js';
+
 
 export class PortfolioPageWrapper extends LitElement {
   static styles = css`
