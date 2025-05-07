@@ -3,6 +3,8 @@
  * @license Apache-2.0, see LICENSE for full text.
  */
 import { css } from 'lit';
+import '@haxtheweb/scroll-button/scroll-button.js';
+
 
 export const portfolioSidebarStyles = css`
   :host {

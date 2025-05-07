@@ -128,22 +128,24 @@
   }
 
   .scroll-top-btn {
-    margin-top: auto;
-    margin-bottom: 2rem;
-    background: white;
-    color: black;
-    border: none;
-    font-size: 1.5rem;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background 0.3s, color 0.3s;
-  }
+  position: fixed; 
+  bottom: 2rem;
+  right: 2rem;
+  background: rgb(25, 183, 204);
+  color: black;
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
 
-  .scroll-top-btn:hover {
-    background: gray;
-    color: white;
-  }
+.scroll-top-btn:hover {
+  background: gray;
+  color: white;
+}
+
 </style>
 
 
@@ -162,8 +164,12 @@
    }
 
    function scrollToTop() {
-     window.scrollTo({ top: 0, behavior: 'smooth' });
-   }
+  const main = document.querySelector('main');
+  if (main) {
+    main.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
 
  </script>
 </head>
@@ -177,7 +183,6 @@
      <button onclick="scrollToSection('skills')">Skills</button>
      <button onclick="scrollToSection('experience')">Experience</button>
      <button onclick="scrollToSection('contact')">Contact</button>
-     <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
 
    </portfolio-sidebar>
 
@@ -260,9 +265,20 @@
 
        <a class="download-resume" href="./rsume.2.pdf" download>Download Resume</a>
 
+
+
+
+       
+
      </section>
 
    </main>
+   <button class="scroll-top-btn" onclick="scrollToTop()">↑</button>
+
+   
+
+
+   
 
  </div>
 
